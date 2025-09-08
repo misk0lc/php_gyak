@@ -1,3 +1,3 @@
 <?php
-echo "Szia";
+    echo "Szia";
 ?>
