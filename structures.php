@@ -60,4 +60,6 @@
     {
         echo "$student[name] kora: $student[age] év <br>";
     }
+
+    //hf: users tömb, ami majd lehetővé teszi az autehtikációt, foreachel irasd ki
 ?>
