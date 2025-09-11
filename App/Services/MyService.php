@@ -10,7 +10,7 @@
         public function run ($name = "User")
         {
             $this -> log("Service elindult");
-            echo $this -> greet("morzsa");
+            echo $this -> greet("a");
         }
     }
 ?>
