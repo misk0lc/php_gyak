@@ -9,7 +9,7 @@ function capitalizeAll(array $names):array{
         $tempArray = mb_strtoupper($name);
     }
     return $tempArray;*/
-    array_map("mb_strtoupper", $names)
+    array_map("mb_strtoupper", $names);
 }
 $capitalizedNames = capitalizeAll($name);
 print_r($capitalizedNames);
