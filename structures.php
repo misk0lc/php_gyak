@@ -49,6 +49,7 @@
     {
         echo "$name: $age éves.<br>";
     }
+    //vegyünk fel egy students tömböt ami tönmbök
     //vegyünk fel egy students tömböt ami tömbök töbje legyen
     $students =
     [
