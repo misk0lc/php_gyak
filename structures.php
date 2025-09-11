@@ -49,7 +49,7 @@
     {
         echo "$name: $age éves.<br>";
     }
-    //vegyünk fel egy students tömböt ami tönmbök töbje legyen
+    //vegyünk fel egy students tömböt ami tömbök töbje legyen
     $students =
     [
         ["name" => "Kovács Péter", "age" => 20],
@@ -61,5 +61,15 @@
         echo "$student[name] kora: $student[age] év <br>";
     }
 
-    //hf: users tömb, ami majd lehetővé teszi az autehtikációt, foreachel irasd ki
+    // hf: users tömb, ami majd lehetővé teszi az autentikációt, foreachel irasd ki
+    echo "<br><b>Autentikációhoz használt users tömb:</b><br>";
+    $authUsers = [
+        ["username" => "admin", "password" => "1234"],
+        ["username" => "pisti", "password" => "abcd"],
+        ["username" => "tibi", "password" => "qwerty"]
+    ];
+
+    foreach ($authUsers as $user) {
+        echo "Felhasználónév: {$user['username']}, Jelszó: {$user['password']}<br>";
+    }
 ?>
