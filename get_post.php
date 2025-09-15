@@ -9,6 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $pass = $_POST['pass'];
     }
 }
+if (isset($_REQUEST["name"])) 
+{
+    $name = htmlspecialchars($_REQUEST["name"]);
+    $pass = $_REQUEST["pass"];
+    echo "Szia, $name ($pass)";
+}
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['name'])) {
     $name = $_GET['name'];
 }
