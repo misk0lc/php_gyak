@@ -22,15 +22,40 @@ tfh: van egy cards táblám, amiben van name, email, id mező.
 //     note VARCHAR(255) DEFAULT NULL
     
 // ); ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_hungarian_ci;
-
 $dsn = 'mysql:host=localhost;dbname=businesscards;charset=utf8mb4';
 $user = 'root';
 $pass = '';
 
-try {
-    $pdb = new PDB($dsn, $user, $pass);
-} catch (PDBException $ex) {
-    echo "Kapcsolódási hiba: " . $ex->getMessage();
-}
+// Először definiáljuk a változókat
+$name = "Jane Doe";
+$email = "jane@example.com";
+$companyName = "Doe Inc.";
+$phone = "987-654-3210";
+$photo = "jane_photo.jpg";
+$status = "active";
+$note = "Important client";
 
+try {
+    $pdb = new PDO($dsn, $user, $pass);
+    $pdb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo "Sikeres csatlakozás!<br>";
+
+    // CREATE
+    // $sql = "INSERT INTO cards (name,companyName,phone,email,photo,status,note) VALUES 
+    // ('$name','$companyName','$phone','$email','$photo','$status','$note')";
+    // $pdb->exec($sql);
+    // echo "Sikeres beszúrás!<br>";
+
+    // READ
+    $sql = "SELECT * FROM cards WHERE id=11";
+    $result = $pdb->query($sql);
+    $card = $result->fetch(PDO::FETCH_ASSOC);
+    echo  "<br>";
+    print_r($card);
+
+} catch (PDOException $ex) {
+    echo "Kapcsolódási hiba: " . $ex->getMessage();
+    exit();
+}
 ?>
